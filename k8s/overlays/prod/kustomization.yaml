@@ -1,0 +1,10 @@
+resources:
+  - ../../base
+
+images:
+  - name: muffinnaphat/go-sample
+    newTag: 0.2.0
+
+replicas:
+  - name: go-sample
+    count: 3
