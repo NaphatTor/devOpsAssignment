@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-go-sample
+  namespace: argocd
+spec:
+  project: prod-go-sample
+  source: 
+    repoURL: https://github.com/NaphatTor/devOpsAssignment.git
+    targetRevision: main
+    path: k8s/overlays/prod/
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true

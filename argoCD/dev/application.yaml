@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dev-go-sample
+  namespace: argocd
+spec:
+  project: dev-go-sample
+  source: 
+    repoURL: https://github.com/NaphatTor/devOpsAssignment.git
+    #branch
+    targetRevision: dev
+    path: k8s/overlays/dev/
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true

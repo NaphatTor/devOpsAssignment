@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: dev-go-sample
+  namespace: argocd
+spec:
+  description: ARGO CD
+  destinations:
+  - namespace: dev
+    server: https://kubernetes.default.svc
